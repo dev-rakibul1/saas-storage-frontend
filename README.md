@@ -70,12 +70,12 @@ npm run lint
 
 | Key | Required | Description |
 | --- | --- | --- |
-| `NEXT_PUBLIC_API_BASE_URL` | Yes | Backend API base URL |
+| `NEXT_PUBLIC_API_BASE_URL` | Yes | Backend base URL (system auto-appends `/api/v1`) |
 
 Example:
 
 ```bash
-NEXT_PUBLIC_API_BASE_URL=http://localhost:5000/api/v1
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5000
 ```
 
 ## 7) Integration Architecture
@@ -94,7 +94,12 @@ Auth behavior:
 
 ## 8) Complete API Integration Matrix
 
-All API calls are made to `${NEXT_PUBLIC_API_BASE_URL}`.
+All API calls are made to normalized base URL (auto `/api/v1` suffix).
+
+Examples:
+
+- `NEXT_PUBLIC_API_BASE_URL=https://saas-file-management-api.vercel.app` -> uses `https://saas-file-management-api.vercel.app/api/v1`
+- `NEXT_PUBLIC_API_BASE_URL=https://saas-file-management-api.vercel.app/api/v1` -> also works (no duplicate suffix)
 
 ### Auth + Profile
 
@@ -191,6 +196,6 @@ Vercel project settings:
 
 Required Vercel environment variable:
 
-- `NEXT_PUBLIC_API_BASE_URL=https://<your-backend-vercel-domain>/api/v1`
+- `NEXT_PUBLIC_API_BASE_URL=https://<your-backend-vercel-domain>`
 
 After backend deploy URL changes, update `NEXT_PUBLIC_API_BASE_URL` and redeploy frontend.
