@@ -1,16 +1,25 @@
-const DEFAULT_API_ORIGIN = 'http://localhost:5000'
 const API_PREFIX = '/api/v1'
 
-const normalizeApiBaseUrl = (value?: string): string => {
-  const normalizedOrigin = (value ?? DEFAULT_API_ORIGIN).trim().replace(/\/+$/, '')
-
-  if (normalizedOrigin.endsWith(API_PREFIX)) {
-    return normalizedOrigin
+const getApiOrigin = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return 'https://saas-file-management-api.vercel.app'
   }
 
-  return `${normalizedOrigin}${API_PREFIX}`
+  return 'http://localhost:5000'
 }
 
-export const API_BASE_URL = normalizeApiBaseUrl(process.env.NEXT_PUBLIC_API_BASE_URL)
+const normalizeApiBaseUrl = (value?: string): string => {
+  const origin = (value ?? getApiOrigin()).trim().replace(/\/+$/, '')
+
+  if (origin.endsWith(API_PREFIX)) {
+    return origin
+  }
+
+  return `${origin}${API_PREFIX}`
+}
+
+export const API_BASE_URL = normalizeApiBaseUrl(
+  process.env.NEXT_PUBLIC_API_BASE_URL,
+)
 
 export const TOKEN_STORAGE_KEY = 'saas_access_token'
