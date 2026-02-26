@@ -38,3 +38,4 @@ Detailed frontend integration guide:
 
 - `docs/FRONTEND_INTEGRATION.md`
 # saas-storage-frontend
+# saas-storage-frontend
