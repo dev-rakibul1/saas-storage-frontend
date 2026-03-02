@@ -85,10 +85,16 @@ npm run lint
 | --- | --- | --- |
 | `NEXT_PUBLIC_API_BASE_URL` | Yes | Backend base URL (system auto-appends `/api/v1`) |
 
-Example:
+Example (local):
 
 ```bash
 NEXT_PUBLIC_API_BASE_URL=http://localhost:5000
+```
+
+Example (production):
+
+```bash
+NEXT_PUBLIC_API_BASE_URL=https://saas-file-management-api.vercel.app
 ```
 
 ## 7) Integration Architecture
@@ -209,6 +215,6 @@ Vercel project settings:
 
 Required Vercel environment variable:
 
-- `NEXT_PUBLIC_API_BASE_URL=https://<your-backend-vercel-domain>`
+- `NEXT_PUBLIC_API_BASE_URL=https://saas-file-management-api.vercel.app`
 
 After backend deploy URL changes, update `NEXT_PUBLIC_API_BASE_URL` and redeploy frontend.
