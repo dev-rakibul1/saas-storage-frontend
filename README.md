@@ -2,6 +2,19 @@
 
 Next.js dashboard app for the subscription-based SaaS file management platform.
 
+## Technical Assessment Quick Info
+
+- GitHub Repository: [Frontend Repo Link](https://github.com/<your-username>/<frontend-repo>)
+- Live Frontend Link: [https://saas-storage-frontend.vercel.app/](https://saas-storage-frontend.vercel.app/)
+- Backend API Link: [https://saas-file-management-api.vercel.app/](https://saas-file-management-api.vercel.app/)
+- Environment Template: [`.env.example`](.env.example)
+- Database Design PDF (backend): [`../saas-file-management-api/docs/erd/saas-file-management-erd.pdf`](../saas-file-management-api/docs/erd/saas-file-management-erd.pdf)
+
+Demo credentials:
+
+- Admin: `fl.rakibul@gmail.com` / `12345678`
+- User: `demo.user@zoomit.com` / `12345678` (register once if not seeded)
+
 ## 1) Requirement Coverage
 
 Implemented frontend modules:
